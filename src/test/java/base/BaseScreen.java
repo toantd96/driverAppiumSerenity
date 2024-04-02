@@ -9,10 +9,21 @@ import io.appium.java_client.touch.offset.PointOption;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.webdriver.WebDriverFacade;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import utils.DriverHelper;
+import utils.EnvironmentConfig;
 
 import java.time.Duration;
 
 public class BaseScreen extends PageObject {
+    public WebDriver mobileDriver;
+
+    public BaseScreen() {
+        mobileDriver = DriverHelper.appiumDriver(EnvironmentConfig.DEVICE_NAME,
+                EnvironmentConfig.APP_PACKAGE, EnvironmentConfig.APP_ACTIVITY,
+                EnvironmentConfig.PLATFORM_NAME, EnvironmentConfig.AUTOMATION_NAME,
+                EnvironmentConfig.URL_APPIUM);
+    }
 
     public void enter() {
         ((AndroidDriver) ((WebDriverFacade) getDriver()).getProxiedDriver()).pressKey(new KeyEvent(AndroidKey.ENTER));
@@ -65,6 +76,14 @@ public class BaseScreen extends PageObject {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    public void switchDriver(WebDriver webDriver) {
+        setDriver(webDriver);
+    }
+    public void closeDriver(WebDriver webDriver) {
+        setDriver(webDriver);
+        getDriver().close();
     }
 
 }

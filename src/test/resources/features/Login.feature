@@ -3,7 +3,7 @@ Feature: login Test
   Background:
     Given Open app
 
-  @TC_01  @smoke
+  @TC_01  @smoke  @mobile
   Scenario: login Test
     When Click GetStarted button
     And Choose topics

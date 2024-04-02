@@ -1,6 +1,7 @@
 package steps;
 
 
+import base.BaseScreen;
 import net.serenitybdd.annotations.Step;
 import org.junit.Assert;
 import screens.ChooseTopicsScreen;
@@ -14,7 +15,6 @@ public class FlipboardSteps {
     ChooseTopicsScreen chooseTopicsScreen;
     HomeScreen homeScreen;
     SearchScreen searchScreen;
-
     @Step
     public void clickGetStartedButton(){
         loginScreen.clickGetStartedButton();
