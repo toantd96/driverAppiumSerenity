@@ -4,10 +4,13 @@ Feature: login Test
     Given Open app
 
   @TC_01  @smoke  @mobile
-  Scenario: login Test
-    When Click GetStarted button
-    And Choose topics
-    And Click Continue button
+  Scenario: Internal money transfer
+    When Click GetStarted Ipay
+    And User transfer in bank
+    And User transfer in Vietinbank
+    And Choose Account To
+    And Choose amount money to transfer "5000"
+    And Confirm Transaction
 
     And Go to google
     And Search "airpods" in google
@@ -18,8 +21,7 @@ Feature: login Test
 
   @TC_02  @smoke
   Scenario: search Item Test
-    When Click GetStarted button
-    And Choose topics
-    And Click Continue button
-    And Search "airpods" in FlipBoard
-    Then Verify search text is "airpods"
+    When Mở app vietinBank iPay
+    And Người dùng vào chức năng chuyển tiền
+    And Choose Account To
+    And Choose amount money to transfer "5000"

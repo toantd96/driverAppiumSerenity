@@ -4,54 +4,49 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import net.serenitybdd.annotations.Steps;
 import org.junit.Assert;
-import screens.mobile.ChooseTopicsScreen;
+
 import screens.mobile.HomeScreen;
 import screens.mobile.LoginScreen;
-import screens.mobile.SearchScreen;
+
 
 public class HomePageStep {
-    @Steps
     LoginScreen loginScreen;
-    @Steps
-    ChooseTopicsScreen chooseTopicsScreen;
-    @Steps
-    SearchScreen searchScreen;
-    @Steps
     HomeScreen homeScreen;
 
-    @When("^Click GetStarted button$")
-    public void clickgetstartedbutton() {
-        loginScreen.clickGetStartedButton();
+    @When("^Click GetStarted Ipay$")
+    @When("^Mở app vietinBank iPay$")
+    public void clickGetStartedIpay() {
+        loginScreen.clickGetStartedIpay();
     }
 
     @Given("Open app")
     public void openApp() {
     }
 
-    @And("^Choose topics$")
-    public void chooseTopics() {
-        chooseTopicsScreen.chooseTopics(3);
+    @And("User transfer in bank")
+    @And("Người dùng vào chức năng chuyển tiền")
+    public void userTransferInBank() throws InterruptedException {
+        homeScreen.userTransferInBank();
     }
 
-    @And("^Click Continue button$")
-    public void clickContinueButton() {
-        chooseTopicsScreen.clickContinueButton();
-
+    @And("Choose Account To")
+    public void chooseAccountTo() throws InterruptedException {
+        homeScreen.chooseAccountTo();
     }
 
-    @And("^Search \"([^\"]*)\" in FlipBoard$")
-    public void searchFlipBoard(String text) {
-        chooseTopicsScreen.skipLoginButton();
-        homeScreen.selectBottomPainel(3);
-        searchScreen.searchFlipBoard(text);
+    @And("Choose amount money to transfer {string}")
+    public void chooseAmountMoneyToTransfer(String text) throws InterruptedException {
+        homeScreen.chooseAmountMoneyToTransfer(text);
     }
 
-    @And("^Verify search text is \"([^\"]*)\"$")
-    public void clickContinueButton(String text) {
-        Assert.assertTrue(searchScreen.verifySearchText(text));
+    @And("Confirm Transaction")
+    public void confirmTransaction() throws InterruptedException {
+        homeScreen.confirmTransaction();
     }
 
-
+    @And("User transfer in Vietinbank")
+    public void userTransferInVietinbank() throws InterruptedException {
+        homeScreen.userTransferInBank();
+    }
 }
