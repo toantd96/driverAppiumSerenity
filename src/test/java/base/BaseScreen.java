@@ -16,15 +16,7 @@ import utils.EnvironmentConfig;
 import java.time.Duration;
 
 public class BaseScreen extends PageObject {
-    public WebDriver mobileDriver;
-
-    public BaseScreen() {
-        mobileDriver = DriverHelper.appiumDriver(EnvironmentConfig.DEVICE_NAME,
-                EnvironmentConfig.APP_PACKAGE, EnvironmentConfig.APP_ACTIVITY,
-                EnvironmentConfig.PLATFORM_NAME, EnvironmentConfig.AUTOMATION_NAME,
-                EnvironmentConfig.URL_APPIUM);
-    }
-
+    public final WebDriver mobileDriver = getDriver();
     public void enter() {
         ((AndroidDriver) ((WebDriverFacade) getDriver()).getProxiedDriver()).pressKey(new KeyEvent(AndroidKey.ENTER));
     }

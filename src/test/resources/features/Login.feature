@@ -9,6 +9,13 @@ Feature: login Test
     And Choose topics
     And Click Continue button
 
+    And Go to google
+    And Search "airpods" in google
+
+    Given I have an user
+    When I call API to get user
+    Then the API should return status 200
+
   @TC_02  @smoke
   Scenario: search Item Test
     When Click GetStarted button

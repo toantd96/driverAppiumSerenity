@@ -1,13 +1,12 @@
 package steps;
 
 
-import base.BaseScreen;
 import net.serenitybdd.annotations.Step;
 import org.junit.Assert;
-import screens.ChooseTopicsScreen;
-import screens.HomeScreen;
-import screens.LoginScreen;
-import screens.SearchScreen;
+import screens.mobile.ChooseTopicsScreen;
+import screens.mobile.HomeScreen;
+import screens.mobile.LoginScreen;
+import screens.mobile.SearchScreen;
 
 public class FlipboardSteps {
 

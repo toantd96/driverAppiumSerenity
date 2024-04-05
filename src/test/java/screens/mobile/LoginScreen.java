@@ -1,4 +1,4 @@
-package screens;
+package screens.mobile;
 
 import base.BaseScreen;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -13,15 +13,9 @@ public class LoginScreen extends BaseScreen {
     @AndroidFindBy(id = "flipboard.app:id/first_launch_cover_continue")
     @iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@label='START A REPAIR']")
     public WebElement getStartedButton;
-    private WebDriver mobileDriver;
 
-    public LoginScreen() {
-        mobileDriver = DriverHelper.appiumDriver(EnvironmentConfig.DEVICE_NAME,
-                EnvironmentConfig.APP_PACKAGE, EnvironmentConfig.APP_ACTIVITY,
-                EnvironmentConfig.PLATFORM_NAME, EnvironmentConfig.AUTOMATION_NAME,
-                EnvironmentConfig.URL_APPIUM);
-    }
     public void clickGetStartedButton(){
+        setDriver(mobileDriver);
         getStartedButton.click();
     }
 

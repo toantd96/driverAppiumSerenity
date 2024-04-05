@@ -1,4 +1,4 @@
-package screens;
+package screens.mobile;
 
 import base.BaseScreen;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -26,26 +26,21 @@ public class ChooseTopicsScreen extends BaseScreen {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@label='START A REPAIR']")
     public WebElementFacade skipLoginButton;
 
-    private WebDriver mobileDriver;
-
-    public ChooseTopicsScreen() {
-        mobileDriver = DriverHelper.appiumDriver(EnvironmentConfig.DEVICE_NAME,
-                EnvironmentConfig.APP_PACKAGE, EnvironmentConfig.APP_ACTIVITY,
-                EnvironmentConfig.PLATFORM_NAME, EnvironmentConfig.AUTOMATION_NAME,
-                EnvironmentConfig.URL_APPIUM);
-    }
 
     public void chooseTopics(int topicsCount) {
+        setDriver(mobileDriver);
         for (int i = 0; i < topicsCount; i++) {
             (topic.get(i)).withTimeoutOf(Duration.ofSeconds(20)).waitUntilVisible().click();
         }
     }
 
     public void clickContinueButton() {
+        setDriver(mobileDriver);
         continueButton.click();
     }
 
     public void skipLoginButton() {
+        setDriver(mobileDriver);
         skipLoginButton.click();
     }
 

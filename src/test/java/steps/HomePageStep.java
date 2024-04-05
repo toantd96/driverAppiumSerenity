@@ -4,16 +4,21 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import net.serenitybdd.annotations.Steps;
 import org.junit.Assert;
-import screens.ChooseTopicsScreen;
-import screens.HomeScreen;
-import screens.LoginScreen;
-import screens.SearchScreen;
+import screens.mobile.ChooseTopicsScreen;
+import screens.mobile.HomeScreen;
+import screens.mobile.LoginScreen;
+import screens.mobile.SearchScreen;
 
 public class HomePageStep {
+    @Steps
     LoginScreen loginScreen;
+    @Steps
     ChooseTopicsScreen chooseTopicsScreen;
+    @Steps
     SearchScreen searchScreen;
+    @Steps
     HomeScreen homeScreen;
 
     @When("^Click GetStarted button$")
@@ -33,6 +38,7 @@ public class HomePageStep {
     @And("^Click Continue button$")
     public void clickContinueButton() {
         chooseTopicsScreen.clickContinueButton();
+
     }
 
     @And("^Search \"([^\"]*)\" in FlipBoard$")
