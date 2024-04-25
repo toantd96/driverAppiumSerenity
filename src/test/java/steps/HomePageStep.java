@@ -1,6 +1,7 @@
 package steps;
 
 
+import base.MobileDriver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -10,7 +11,7 @@ import screens.mobile.HomeScreen;
 import screens.mobile.LoginScreen;
 
 
-public class HomePageStep {
+public class HomePageStep extends MobileDriver {
     LoginScreen loginScreen;
     HomeScreen homeScreen;
 
@@ -22,6 +23,7 @@ public class HomePageStep {
 
     @Given("Open app")
     public void openApp() {
+        newDriver();
     }
 
     @And("User transfer in bank")
