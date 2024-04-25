@@ -9,16 +9,14 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.WebElement;
 
-public class LoginScreen extends PageObject {
-
-    MobileDriver mobileDriver =new MobileDriver();
+public class LoginScreen extends MobileDriver {
 
     @FindBy(xpath = "//*[@text='VietinBank iPay']")
 //    @iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@label='START A REPAIR']")
     public WebElementFacade getStartedIpay;
 
     public void clickGetStartedIpay(){
-        setDriver(mobileDriver.newDriver());
+        setDriver(newDriver());
         getStartedIpay.waitUntilVisible().waitUntilClickable().click();
     }
 

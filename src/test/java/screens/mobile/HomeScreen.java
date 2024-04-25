@@ -14,9 +14,7 @@ import java.util.List;
 
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
-public class HomeScreen extends BaseScreen {
-
-    MobileDriver mobileDriver =new MobileDriver();
+public class HomeScreen extends MobileDriver {
 
     @AndroidFindBy(id = "flipboard.app:id/bottom_nav_view_icon")
     @iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@label='START A REPAIR']")
@@ -51,6 +49,7 @@ public class HomeScreen extends BaseScreen {
     }
 
     public void userTransferInBank() throws InterruptedException {
+        setDriver(newDriver());
         Thread.sleep(1000);
         clickDangNhap.waitUntilVisible().click();
     }

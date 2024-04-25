@@ -17,7 +17,7 @@ Feature: login Test
 
     Given I have an user
     When I call API to get user
-    Then the API should return status 300
+    Then the API should return status 200
 
   @TC_02  @smoke
   Scenario: search Item Test
