@@ -1,5 +1,6 @@
 package base;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import net.thucydides.core.webdriver.DriverSource;
 import org.openqa.selenium.WebDriver;
@@ -19,13 +20,13 @@ public class MobileDriver implements DriverSource {
     capabilities.setCapability("appActivity", "com.sec.android.app.launcher.activities.LauncherActivity");
     capabilities.setCapability("autoGrantPermissions", "true");
     capabilities.setCapability("noReset", true);
-      AndroidDriver driver;
+      WebDriver driver;
       try {
-          driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+          driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
       } catch (MalformedURLException e) {
           throw new RuntimeException(e);
       }
-   System.out.println("driver"+driver);
+   System.out.println("driver la "+driver);
       return driver;
   }
 

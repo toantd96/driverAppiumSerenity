@@ -5,7 +5,7 @@ Feature: login Test
 
   @TC_01  @smoke  @mobile
   Scenario: Internal money transfer
-#    When Click GetStarted Ipay
+    When Click GetStarted Ipay
 #    And User transfer in bank
 #    And User transfer in Vietinbank
 #    And Choose Account To

@@ -11,7 +11,7 @@ import screens.mobile.HomeScreen;
 import screens.mobile.LoginScreen;
 
 
-public class HomePageStep extends MobileDriver {
+public class HomePageStep {
     LoginScreen loginScreen;
     HomeScreen homeScreen;
 
@@ -23,7 +23,7 @@ public class HomePageStep extends MobileDriver {
 
     @Given("Open app")
     public void openApp() {
-        newDriver();
+//        newDriver();
     }
 
     @And("User transfer in bank")
