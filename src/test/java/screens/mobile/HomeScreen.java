@@ -1,10 +1,12 @@
 package screens.mobile;
 
 import base.BaseScreen;
+import base.MobileDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.appium.java_client.touch.offset.PointOption;
+import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.Dimension;
 
@@ -14,12 +16,14 @@ import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxie
 
 public class HomeScreen extends BaseScreen {
 
+    MobileDriver mobileDriver =new MobileDriver();
+
     @AndroidFindBy(id = "flipboard.app:id/bottom_nav_view_icon")
     @iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@label='START A REPAIR']")
     public List<WebElementFacade> bottomNavigation;
 
-    @AndroidFindBy(xpath = "(//android.widget.LinearLayout[@resource-id='com.vietinbank.ipay:id/viewMain'])[1]")
-    @iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@label='START A REPAIR']")
+    @FindBy(xpath = "(//android.widget.LinearLayout[@resource-id='com.vietinbank.ipay:id/viewMain'])[1]")
+//    @iOSXCUITFindBy(xpath="//XCUIElementTypeButton[@label='START A REPAIR']")
     public WebElementFacade clickDangNhap;
 
     @AndroidFindBy(xpath = "(//android.widget.ImageView[@resource-id='com.vietinbank.ipay:id/ivSelect'])[1]")

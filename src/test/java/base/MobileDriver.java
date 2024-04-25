@@ -9,16 +9,16 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class MobileDriver implements DriverSource {
+public class MobileDriver {
 
-  @Override
   public WebDriver newDriver() {
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("platformName", "Android");
     capabilities.setCapability("deviceName", "RFCR71CE5AM");
     capabilities.setCapability("appPackage", "com.sec.android.app.launcher");
     capabilities.setCapability("appActivity", "com.sec.android.app.launcher.activities.LauncherActivity");
-    capabilities.setCapability("autoGrantPermissions", "true");
+      capabilities.setCapability("autoGrantPermissions", "true");
+    capabilities.setCapability("automationName", "UiAutomator2");
     capabilities.setCapability("noReset", true);
       WebDriver driver;
       try {
@@ -30,7 +30,6 @@ public class MobileDriver implements DriverSource {
       return driver;
   }
 
-  @Override
   public boolean takesScreenshots() {
       return true;
   }
